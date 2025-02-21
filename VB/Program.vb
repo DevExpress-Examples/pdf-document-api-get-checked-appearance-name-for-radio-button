@@ -7,7 +7,7 @@ Namespace GetRadioGroupCheckedValues
         Shared Sub Main(ByVal args As String())
             ' Load a document with an interactive form.
             Dim processor As PdfDocumentProcessor = New PdfDocumentProcessor()
-            processor.LoadDocument("DocumentToFill.pdf")
+            processor.LoadDocument("..\..\..\DocumentToFill.pdf")
             ' Retrieve the form field facade:
             Dim documentFacade As PdfDocumentFacade = processor.DocumentFacade
             Dim acroFormFacade As PdfAcroFormFacade = documentFacade.AcroForm

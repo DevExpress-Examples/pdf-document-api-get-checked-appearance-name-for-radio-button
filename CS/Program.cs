@@ -1,4 +1,5 @@
 ﻿using DevExpress.Pdf;
+using System.Diagnostics;
 
 namespace GetRadioGroupCheckedValues
 {
@@ -9,7 +10,7 @@ namespace GetRadioGroupCheckedValues
         {
             // Load a document with an interactive form.
             PdfDocumentProcessor processor = new PdfDocumentProcessor();
-            processor.LoadDocument(@"DocumentToFill.pdf");
+            processor.LoadDocument("..\\..\\..\\DocumentToFill.pdf");
 
             // Retrieve the form field facade:
             PdfDocumentFacade documentFacade = processor.DocumentFacade;
@@ -24,7 +25,9 @@ namespace GetRadioGroupCheckedValues
             }
 
             // Save the modified document.
-            processor.SaveDocument("..\\..\\Result.pdf");
-        }
+            processor.SaveDocument("..\\..\\..\\Result.pdf");
+
+            Process.Start(new ProcessStartInfo("..\\..\\..\\Result.pdf") { UseShellExecute = true });
+                }
     }
 }
